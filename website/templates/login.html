@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Notes App {% endblock title %} </title>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+
+</head>
+
+<body>
+
+    <!-- section for flask messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                      <div class="flash">
+                        {{ message }} <i class="fa-solid fa-xmark" onclick="removeit()"></i>
+                      </div>
+                {% else %}
+                      <div class="flash" style="color: green;">
+                        {{ message }} <i class="fa-solid fa-xmark" onclick="removeit()"></i>
+                      </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <!-- flask message section ends -->
+
+
+    <h1> {% block heading %}
+        Notes App
+    {% endblock heading %} </h1>
+
+    <div class="login-signup">
+
+        {% block main %}
+
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? &nbsp;<a href="/signup"><u>Sign Up</u></a></p>
+        </form>
+
+        {% endblock main %}
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+
+</html>

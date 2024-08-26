@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Notes App</h1>
+        <button class="logout-btn">Logout</button>
+    </header>
+
+    <main>
+        <ul id="notes-list">
+            {% for note in notes %}
+                <li class="note">
+                    <span class="note-text">{{ note.data }}</span>
+                    <div class="note-actions">
+                        <button class="edit-btn" onclick="updateNote('{{ note.id }}')">Edit</button>
+                        <button class="delete-btn" onclick="deleteNote('{{ note.id }}')">Delete</button>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <input type="text" name="note-input" id="note-input" placeholder="Type your note here...">
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

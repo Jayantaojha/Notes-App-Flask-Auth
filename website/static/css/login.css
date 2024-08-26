@@ -1,0 +1,121 @@
+/* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            color: #fff;
+            background-color: #121212; /* Darker background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+        }
+
+        .flash{
+            text-align: center;
+            width: 50vw;
+            height: 30px;
+            color: red;
+            position: absolute;
+            top: 20px;
+        }
+
+        .fa-xmark{
+            color: white;
+            cursor: pointer;
+            margin-left: 20px;
+            font-size: large;
+        }
+
+
+        /* Header Styling */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #6200ea; /* Matching the accent color */
+        }
+
+        /* Container for the Form */
+        .login-signup {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #303337;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adding shadow for depth */
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Input Field Styling */
+        form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e1e1e; /* Darker input background */
+            color: #fff;
+            font-size: 1em;
+        }
+
+        form input:focus {
+            outline: none;
+            border: 1px solid #6200ea; /* Accent color on focus */
+        }
+
+        /* Button Styling */
+        form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #6200ea; /* Primary button color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #3700b3; /* Darker shade on hover */
+        }
+
+        /* Link Styling */
+        form p {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        form a {
+            color: #03a9f4; /* Light blue color for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        form a:hover {
+            color: #0288d1; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+
+
+        /* for smaller devices */
+        @media (width <= 600px){
+            body{
+                padding: 0 20px;
+            }
+        }

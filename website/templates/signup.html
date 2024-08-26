@@ -1,0 +1,19 @@
+{% extends 'login.html' %}
+
+{% block title %} Sign Up - Notes App {% endblock title %}
+
+{% block heading %}
+    Sign Up
+{% endblock heading %}
+
+{% block main %}
+    
+<form method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Submit</button>
+    <p>Already have an accout! &nbsp; <a href="/"><u>Login</u></a> </p>
+</form>
+
+{% endblock main %}
